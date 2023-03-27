@@ -2,6 +2,7 @@
 
 module Picnic
   class Routes < Hanami::Routes
-    root { "Hello from Hanami" }
+    root to: "home.show"
+    get "/food", to: "food.index"
   end
 end

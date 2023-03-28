@@ -5,7 +5,7 @@ module Picnic
     module Home
       class Show < Picnic::Action
         def handle(*, response)
-          response.body = "Would you like to picnic?"
+          response.body = 'Would you like to picnic?'
         end
       end
     end

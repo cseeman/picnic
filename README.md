@@ -27,3 +27,14 @@ Run migrations
 $ bundle exec rake db:migrate
 $ HANAMI_ENV=test bundle exec rake db:migrate
 ```
+I am being lazy, so if you want some food you need to boot up a console and insert into the DB using the ROM relation.
+
+```
+hanami console
+picnic[development]> food = app["persistence.rom"].relations[:food]
+=> #<Picnic::Persistence::Relations::Food name=ROM::Relation::Name(food) dataset=#<Sequel::Postgres::Dataset: "SELECT \"food\".\"id\", \"food\".\"name\", \"food\".\"description\" FROM \"food\" ORDER BY \"food\".\"id\"">>
+picnic[development]> food.insert(name: "Sausage Rolls", description: "Savoury pastry meal, popular in current and former Commonwealth nations, consisting of sausage meat wrapped in puff pastry.")
+=> 3
+picnic[development]> food.to_a.count
+=> 3
+```

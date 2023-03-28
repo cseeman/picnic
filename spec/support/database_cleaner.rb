@@ -1,9 +1,9 @@
 # spec/support/database_cleaner.rb
 
-require "database_cleaner-sequel"
+require 'database_cleaner-sequel'
 
 Hanami.app.prepare(:persistence)
-DatabaseCleaner[:sequel, db: Hanami.app["persistence.db"]]
+DatabaseCleaner[:sequel, db: Hanami.app['persistence.db']]
 
 RSpec.configure do |config|
   config.before(:suite) do

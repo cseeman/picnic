@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe "Root", type: :request do
-  it "is successful" do
-    get "/"
+RSpec.describe 'Root', type: :request do
+  it 'is successful' do
+    get '/'
 
     # Find me in `config/routes.rb`
     expect(last_response).to be_successful
-    expect(last_response.body).to eq("Would you like to picnic?")
+    expect(last_response.body).to eq('Would you like to picnic?')
   end
 end
